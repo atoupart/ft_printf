@@ -78,7 +78,7 @@ int				ft_convert_wcharc(va_list ap, t_flags *flags, char *str)
 	c = (wchar_t)va_arg(ap, wchar_t);
 	if (c == 0)
 		return (case_zero_c(flags));
-	str = ft_transform_c(c);
+	str = ft_transform_c(c, flags);
 	tmp = str;
 	str = ft_padding_str(flags, str);
 	ft_putstr(str);
@@ -103,7 +103,7 @@ int				ft_convert_wchars(va_list ap, t_flags *flags, char *str)
 		ft_strdel(&str);
 		return (len);
 	}
-	str = ft_transform_s(s);
+	str = ft_transform_s(s, flags);
 	tmp = str;
 	str = ft_padding_str(flags, str);
 	ft_putstr(str);

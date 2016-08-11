@@ -17,11 +17,6 @@
 # include <stdarg.h>
 # include "libft.h"
 
-# define ptn ft_putnbr
-# define pts ft_putstr
-# define pte ft_putendl
-# define ptcn ft_putchar('\n')
-
 typedef struct		s_flags {
 
 	int				sign;
@@ -36,6 +31,7 @@ typedef struct		s_flags {
 	int				prec;
 	char			ct;
 	char			modifier;
+	int				p_cut;
 }					t_flags;
 
 /*
@@ -80,14 +76,14 @@ int					ft_printf(const char *format, ...);
 **				padding.c
 */
 
-char				*ft_padding_str(t_flags *flags, char *str);
 char				*ft_padding_num(t_flags *flags, char *str);
 char				*ft_padding(t_flags *flags, char *str);
 
 /*
-**				padding.c
+**				padding2.c
 */
 
+char				*ft_padding_str(t_flags *flags, char *str);
 int					ft_prefix(char **retstr, int i, t_flags *flags);
 int					ft_c_fill(int i, int len, char c, char **str);
 char				*ft_num_prec(int n, char *str);
@@ -98,12 +94,12 @@ char				*ft_num_prec(int n, char *str);
 
 char				*ft_transform_oux(t_flags *f, long long n, char *s);
 char				*ft_transform_di(t_flags *f, long long n, char *s);
-char				*ft_transform_s(wchar_t *s);
+char				*ft_transform_s(wchar_t *s, t_flags *flags);
 
 /*
 **				transform.c
 */
 
-char				*ft_transform_c(wchar_t c);
+char				*ft_transform_c(wchar_t c, t_flags *flags);
 
 #endif

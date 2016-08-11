@@ -83,19 +83,26 @@ char		*ft_transform_di(t_flags *flags, long long arg, char *str)
 	return (ft_add_di(flags, arg, str, lg));
 }
 
-char		*ft_transform_s(wchar_t *s)
+char		*ft_transform_s(wchar_t *s, t_flags *flags)
 {
 	char	*str;
 	char	*tmp;
 	int		i;
+	int		k;
 
 	i = 0;
 	str = ft_strdup("");
-	if ((void *)s < (void *)0x100000000)
-		return (NULL);
+	if (flags->prec >= 0)
+		k = flags->prec;
 	while (s[i])
 	{
-		tmp = ft_transform_c(s[i]);
+		tmp = ft_transform_c(s[i], flags);
+		k -= flags->p_cut;
+		if (k <= 0)
+		{
+			ft_strdel(&tmp);
+			break ;
+		}
 		str = ft_strjoin_f(&str, tmp);
 		ft_strdel(&tmp);
 		i++;

@@ -63,3 +63,32 @@ char		*ft_num_prec(int n, char *str)
 	ft_strdel(&tmp2);
 	return (str);
 }
+
+char		*ft_padding_str(t_flags *flags, char *str)
+{
+	char	*retstr;
+	int		i;
+	int		len;
+	char	c;
+
+	i = -1;
+	len = ft_strlen(str);
+	c = flags->z_pad == 1 ? '0' : ' ';
+	if (flags->f_width > (int)len)
+		len = flags->f_width;
+	retstr = ft_strnew(len);
+	if (flags->ljust == 1)
+	{
+		while (++i < len && str && str[i])
+			retstr[i] = str[i];
+		while (i < len)
+			retstr[i++] = c;
+		return (retstr);
+	}
+	while (++i < (int)(flags->f_width - ft_strlen(str)))
+		retstr[i] = c;
+	str--;
+	while (i < len && str++ && *str)
+		retstr[i++] = *str;
+	return (retstr);
+}

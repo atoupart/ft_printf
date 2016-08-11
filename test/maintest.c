@@ -49,36 +49,131 @@ int		main()
 	//   printf("%d\n", ft_printf("%s", "abc"));
 	//   printf("str=%s\n", str);
 	//   printf("\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	printf("%d\n\n", printf("rt_printf = .10ls-->%.1lc\n", L'ঝ'));
+
+	printf("%d\n\n", ft_printf("ft_printf = ls-->%.1lc\n", L"ঝ"));
+
+
+	  	 // printf("%d\n", printf("rl_printf = .5ls-->%.5ls\n", L"123456789"));
+	// printf("%d\n\n", ft_printf("ft_printf = .5ls-->%.5ls\n", L"123456789"));
+
+
+// ঝ€Ȱ0Ā
+
+
+
+
+
+
+
+
+
+	//   	 printf("%d\n", printf("rl_printf = .p-->%.p\n", 0));
+	// printf("%d\n\n", ft_printf("ft_printf = .p-->%.p\n", 0));
+
+
+// 	  	 printf("%d\n", printf("rl_printf = .o-->%.o\n", 0));
+// 	printf("%d\n\n", ft_printf("ft_printf = .o-->%.o\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = .o-->%.o\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = .o-->%.o\n", 1));
+
+
+// 	  	 printf("%d\n", printf("rl_printf = #.o-->%#.o\n", 0));
+// 	printf("%d\n\n", ft_printf("ft_printf = #.o-->%#.o\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = #.o-->%#.o\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.o-->%#.o\n", 1));
+
+
 	 
+// 	     printf("%d\n", printf("rl_printf = #o-->%#o\n", 0));
+// 	printf("%d\n\n", ft_printf("ft_printf = #o-->%#o\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = #o-->%#o\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #o-->%#o\n", 1));
+
+
+
+// 	//      printf("%d\n", printf("rl_printf = #.1o-->%#.1o\n", 0));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.1o-->%#.1o\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = #.1o-->%#.1o\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.1o-->%#.1o\n", 1));
+
+
+
+// 	//      printf("%d\n", printf("rl_printf = #.2o-->%#.2o\n", 0));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.2o-->%#.2o\n", 0));
+
+// 	//      printf("%d\n", printf("rl_printf = #.2o-->%#.2o\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.2o-->%#.2o\n", 1));
+
+
+
+
+// printf("\n\n\n");
+
+
+
+
+// 	  	 printf("%d\n", printf("rl_printf = .x-->%.x\n", 0));
+// 	printf("%d\n\n", ft_printf("ft_printf = .x-->%.x\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = .x-->%.x\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = .x-->%.x\n", 1));
+
+
+// 	  	 printf("%d\n", printf("rl_printf = #.x-->%#.x\n", 0));
+// 	printf("%d\n\n", ft_printf("ft_printf = #.x-->%#.x\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = #.x-->%#.x\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.x-->%#.x\n", 1));
+
+
+
+// 	     printf("%d\n", printf("rl_printf = #x-->%#x\n", 0));
+// 	printf("%d\n\n", ft_printf("ft_printf = #x-->%#x\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = #x-->%#x\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #x-->%#x\n", 1));
+
+
+
+// 	//      printf("%d\n", printf("rl_printf = #.1x-->%#.1x\n", 0));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.1x-->%#.1x\n", 0));
+
+// 	// 	 printf("%d\n", printf("rl_printf = #.1x-->%#.1x\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.1x-->%#.1x\n", 1));
+
+
+
+// 	//      printf("%d\n", printf("rl_printf = #.2x-->%#.2x\n", 0));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.2x-->%#.2x\n", 0));
+
+// 	//      printf("%d\n", printf("rl_printf = #.2x-->%#.2x\n", 1));
+// 	// printf("%d\n\n", ft_printf("ft_printf = #.2x-->%#.2x\n", 1));
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	printf("%d\n", printf("rl_printf-->%#.2o\n", 0));
-	printf("%d\n", ft_printf("ft_printf-->%#.2o\n", 0));
+	// printf("%d\n", printf("rl_printf-->%#.x, %#.0x", 0, 0));
+	// printf("%d\n", ft_printf("ft_printf-->%#.x, %#.0x", 0, 0));
 
 
 	// printf("%d\n", printf("%#1.1O", 0));

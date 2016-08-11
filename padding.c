@@ -12,36 +12,7 @@
 
 #include "ft_printf.h"
 
-char		*ft_padding_str(t_flags *flags, char *str)
-{
-	char	*retstr;
-	int		i;
-	int		len;
-	char	c;
-
-	i = -1;
-	len = ft_strlen(str);
-	c = flags->z_pad == 1 ? '0' : ' ';
-	if (flags->f_width > (int)len)
-		len = flags->f_width;
-	retstr = ft_strnew(len);
-	if (flags->ljust == 1)
-	{
-		while (++i < len && str && str[i])
-			retstr[i] = str[i];
-		while (i < len)
-			retstr[i++] = c;
-		return (retstr);
-	}
-	while (++i < (int)(flags->f_width - ft_strlen(str)))
-		retstr[i] = c;
-	str--;
-	while (i < len && str++ && *str)
-		retstr[i++] = *str;
-	return (retstr);
-}
-
-char		*ft_pad_ljust(t_flags *flags, char *str)
+static char	*ft_pad_ljust(t_flags *flags, char *str)
 {
 	char	*retstr;
 	int		i;
@@ -93,7 +64,7 @@ static char	*ft_pad_rjust(t_flags *f, char *str, char *retstr, int i)
 	return (retstr);
 }
 
-static char	*ft_add_padding_num(t_flags *flags, char *str, char *ret)
+static char	*ft_add_padding_num2(t_flags *flags, char *str, char *ret)
 {
 	char	*retstr;
 	int		i;
@@ -114,20 +85,35 @@ static char	*ft_add_padding_num(t_flags *flags, char *str, char *ret)
 	return (ret);
 }
 
+static char	*ft_add_padding_num1(t_flags *flags, char *str)
+{
+	if (flags->ct != 'p')
+	{
+		if (ft_strcmp(str, "0") == 0)
+		{
+			if (flags->prec == 0 && (flags->ct == 'o' || flags->ct == 'O') \
+			&& flags->pref == 0)
+				str = ft_strdup("");
+			flags->pref = 0;
+			if (flags->prec == 0 && (flags->ct == 'x' || flags->ct == 'X' \
+			|| flags->ct == 'd' || flags->ct == 'D' || flags->ct == 'i' \
+			|| flags->ct == 'u' || flags->ct == 'U'))
+				str = ft_strdup("");
+		}
+		else if ((flags->ct == 'o' || flags->ct == 'O') && flags->prec > 1)
+			flags->pref = 0;
+	}
+	return (str);
+}
+
 char		*ft_padding_num(t_flags *flags, char *str)
 {
 	int		l_diff;
 	char	*ret;
 	char	*tmp;
 
-	ret = NULL;			
-	if (ft_strcmp(str, "0") == 0 && flags->prec <= 0 && flags->ct != 'p')
-	{
-		if (flags->prec == 0)
-			str = ft_strdup("");
-		if ((flags->ct != 'o' && flags->ct != 'O') || flags->prec < 0)
-			flags->pref = 0;
-	}
+	ret = NULL;
+	str = ft_add_padding_num1(flags, str);
 	if (*str == '-')
 		str++;
 	l_diff = flags->prec - (int)ft_strlen(str);
@@ -136,7 +122,7 @@ char		*ft_padding_num(t_flags *flags, char *str)
 		str = ft_num_prec(l_diff, str);
 		tmp = str;
 	}
-	ret = ft_add_padding_num(flags, str, ret);
+	ret = ft_add_padding_num2(flags, str, ret);
 	if (l_diff > 0)
 		ft_strdel(&tmp);
 	return (ret);

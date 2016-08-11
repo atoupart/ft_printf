@@ -23,6 +23,7 @@ void		ft_initialize_flags(t_flags *flags)
 	flags->prec = -1;
 	flags->modifier = '\0';
 	flags->ct = '\0';
+	flags->p_cut = 0;
 }
 
 void		ft_add_get_flags(t_flags *flags, char **format)
