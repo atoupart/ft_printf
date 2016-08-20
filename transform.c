@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/11 11:24:27 by atoupart          #+#    #+#             */
-/*   Updated: 2016/08/11 11:24:32 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/08/20 11:38:03 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char		*ft_transform_s(wchar_t *s, t_flags *flags)
 	{
 		tmp = ft_transform_c(s[i], flags);
 		k -= flags->p_cut;
-		if (k <= 0)
+		if (k < 0)
 		{
 			ft_strdel(&tmp);
 			break ;
